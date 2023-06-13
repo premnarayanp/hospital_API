@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// mongoose.connect(process.env.MONGO_DB_URL);
+mongoose.connect(process.env.MONGO_DB_URL);
 //FOR LOCAL:- 'mongodb://127.0.0.1/authentication_system'
 
 const db = mongoose.connection;
