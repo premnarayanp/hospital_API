@@ -79,15 +79,14 @@ module.exports.create_report = async function(req, res) {
 
 
 
-// create_report of the patients
+// view all reports of  patients
 module.exports.all_reports = async function(req, res) {
     console.log("======req.param.id=========", req.params.id);
 
     try {
         const patient = await Patient.findById({ _id: req.params.id }).populate({
             path: 'reports',
-        });
-
+        }).sort({ createdAt: 'desc' });
         if (patient) {
             console.log("======patient report=========", patient.reports);
 
