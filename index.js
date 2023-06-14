@@ -5,6 +5,8 @@ const db = require('./config/mongoose');
 const passport = require('passport');
 const passportJWT = require('./config/passport-jwt-strategy');
 const app = express();
+// use passport...
+app.use(passport.initialize());
 
 // use post request  url
 app.use(express.urlencoded());
